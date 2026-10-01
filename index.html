@@ -1,0 +1,127 @@
+<!DOCTYPE html> <!-- Tipo de documento: HTML5 -->
+<!--Gonzalez Mares Sofia Yamileth-->
+<!-- ATRIBUTO lang: Idioma en español -->
+<html lang="es">
+
+<head>
+<!-- ATRIBUTO charset: Acepta tildes y letra ñ -->
+<!DOCTYPE html> <!-- tipo de documento: html5 -->
+
+<!-- atributo lang: idioma en español -->
+<html lang="es">
+
+<head>
+<!-- atributo charset: acepta tildes y letra ñ -->
+<meta charset="UTF-8">
+
+<title>Practica 6 - Semáforo TRIAGE</title> <!-- título en la pestaña -->
+
+<style>
+  /* css: estilos visuales para acomodar y dar color a los elementos */
+  body { font-family: sans-serif; background: #eef2f5; display: flex; flex-direction: column; align-items: center; padding: 10px; }
+  .card { background: #fff; width: 620px; padding: 25px; border-radius: 10px; }
+  
+  /* textos del encabezado */
+  .sub1 { font-family: cursive; color: #4a6fa5; font-size: 18px; margin: 0; }
+  .title { color: #001f54; font-size: 38px; font-weight: 900; margin: -5px 0; }
+  .title span { font-weight: 300; }
+  .sub2 { font-family: cursive; color: #4a6fa5; font-size: 22px; text-align: right; margin: -10px 15px 15px 0; }
+
+  /* tabla con 4 columnas organizada mediante css grid */
+  .grid { display: grid; grid-template-columns: 70px 160px 180px 130px; gap: 10px; align-items: center; text-align: center; }
+  .th { background: #dbe4ee; color: #1a2a3a; font-weight: bold; font-size: 12px; padding: 5px; border-radius: 12px; }
+  
+  /* explicación de los círculos:
+     1. width y height le dan 45 píxeles de ancho y alto, creando una caja cuadrada.
+     2. border-radius: 50% es la clave, redondear un cuadrado al 50% lo transforma en un círculo perfecto.
+     3. border le agrega un contorno negro de 3 píxeles alrededor de la luz.
+     4. margin: auto centra la esfera en su columna correspondienta. */
+  .light { width: 45px; height: 45px; border-radius: 50%; border: 3px solid #222; margin: auto; }
+  
+  /* colores individuales que rellenan el fondo de cada círculo con su tono rgb/hex correspondiente */
+  .rojo { background: #ff3b30; } 
+  .naranja { background: #ff9500; }
+  .amarillo { background: #ffcc00; } 
+  .verde { background: #34c759; } 
+  .azul { background: #007aff; }
+
+  /* estilos y colores aplicados al texto de las categorías */
+  .tipo { font-weight: 900; font-style: italic; font-size: 16px; }
+  .rojo-t { color: #d32f2f; } 
+  .naranja-t { color: #e65100; }
+  .amarillo-t { color: #b78103; } 
+  .verde-t { color: #2e7d32; } 
+  .azul-t { color: #1565c0; }
+  .info { font-size: 13px; opacity: 0.8; }
+
+  /* formato para la caja inferior con tus datos personales */
+  .footer { 
+    margin-top: 20px; 
+    text-align: center; 
+    font-size: 14px; 
+    color: #1a2a3a; 
+    background: #dbe4ee; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    width: 620px; 
+    box-sizing: border-box;
+  }
+  .footer p { margin: 3px 0; }
+</style>
+</head>
+<body>
+
+  <!-- atributo class: le aplica el diseño general de tarjeta a este contenedor principal -->
+  <div class="card">
+    <p class="sub1">medicina para medicos</p>
+    <h1 class="title"><span>Semáforo</span> TRIAGE</h1>
+    <p class="sub2">urgencias</p>
+
+    <!-- atributo class: ordena los datos en 4 columnas alineadas -->
+    <div class="grid">
+      <div></div> <!-- cuadro transparente para dejar vacía la primera casilla superior -->
+      <div class="th">Tipo de atención</div>
+      <div class="th">Área de atención</div>
+      <div class="th">Tiempo de espera</div>
+
+      <!-- fila roja: la etiqueta div combina la clase general "light" para la forma redonda y "rojo" para el color de fondo -->
+      <div class="light rojo"></div>
+      <div class="tipo rojo-t">Reanimación</div>
+      <div class="info rojo-t">Área de reanimación</div>
+      <div class="info rojo-t">Inmediato hasta 3 min</div>
+
+      <!-- fila naranja: círculo en forma redonda y fondo naranja -->
+      <div class="light naranja"></div>
+      <div class="tipo naranja-t">Emergencia</div>
+      <div class="info naranja-t">Área de reanimación</div>
+      <div class="info naranja-t">Inmediato hasta 10 min</div>
+
+      <!-- fila amarilla: círculo en forma redonda y fondo amarillo -->
+      <div class="light amarillo"></div>
+      <div class="tipo amarillo-t">Urgencia</div>
+      <div class="info amarillo-t">Consultorio de primer contacto</div>
+      <div class="info amarillo-t">Hasta 30 min</div>
+
+      <!-- fila verde: círculo en forma redonda y fondo verde -->
+      <div class="light verde"></div>
+      <div class="tipo verde-t">Urgencia menor</div>
+      <div class="info verde-t">Consultorio de primer contacto o UMF</div>
+      <div class="info verde-t">Hasta 120 min</div>
+
+      <!-- fila azul: círculo en forma redonda y fondo azul -->
+      <div class="light azul"></div>
+      <div class="tipo azul-t">Sin urgencia</div>
+      <div class="info azul-t">Consultorio de primer contacto o UMF</div>
+      <div class="info azul-t">Hasta 180 min</div>
+    </div>
+  </div>
+
+  <!-- atributo class: recuadro inferior donde se colocan los datos del alumno -->
+  <footer class="footer">
+    <p><strong>Alumno:</strong> Sofia Yamileth Gonzalez Mares</p>
+    <p><strong>Grado y Grupo:</strong> 5-J</p>
+    <p><strong>No. de Control:</strong> 1027</p>
+  </footer>
+
+</body>
+</html>
